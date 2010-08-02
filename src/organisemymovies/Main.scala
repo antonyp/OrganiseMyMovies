@@ -98,6 +98,7 @@ object Main {
           newFile
           
       } else {
+	  println("No moving required")
           file
       }
       
