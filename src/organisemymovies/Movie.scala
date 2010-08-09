@@ -1,7 +1,7 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+* To change this template, choose Tools | Templates
+* and open the template in the editor.
+*/
 
 package organisemymovies
 
@@ -15,11 +15,11 @@ import com.mongodb.BasicDBObject
 
 
 case class Movie (file: File){
- 
+
   val AviFileMatcher = """(.*)\.avi""".r
   val Mp4FileMatcher = """(.*)\.mp4""".r
   val MkvFileMatcher = """(.*)\.mkv""".r
-  
+
   def calcChecksum() :String = {
     Sha1Helper.getSha1(file)
   }
@@ -27,17 +27,17 @@ case class Movie (file: File){
   def isMovie() :Boolean = {
     file.getName match {
       case AviFileMatcher(filename) => {
-          return true
-        }
+        return true
+      }
       case Mp4FileMatcher(filename) => {
-          return true
-        }
+        return true
+      }
       case MkvFileMatcher(filename) => {
-          return true
-        }
+        return true
+      }
       case _ => {
-          return false
-        }
+        return false
+      }
     }
   }
 

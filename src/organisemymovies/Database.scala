@@ -9,24 +9,24 @@ import com.mongodb.DB
 
 object Database {
 
-    def getDatabase() :DB = {
-	val m = new Mongo( "192.168.1.15" )
-	
-	m.getDB( "MyMedia" )
-    }
+  def getDatabase() :DB = {
+    val m = new Mongo( "192.168.1.15" )
 
-    def testWrite() = {
-        
-        val col1 = getDatabase().getCollection("test");
+      m.getDB( "MyMedia" )
+  }
 
-        val doc = new BasicDBObject();
+  def testWrite() = {
 
-	doc.put("name", "test")
-	doc.put("type", "fun")
+    val col1 = getDatabase().getCollection("test")
 
-	col1.insert(doc)
-	doc
-    }
+    val doc = new BasicDBObject()
+
+    doc.put("name", "test")
+    doc.put("type", "fun")
+
+    col1.insert(doc)
+    doc
+  }
 } 
 
 
